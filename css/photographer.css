@@ -1,12 +1,18 @@
+main{
+    position: relative;
+    height: 100%;
+    margin-bottom: 70px;
+}
+
 #contact_modal {
     display: none;
 }
 
-.photograph-header {
+/* .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
-}
+} */
 
 .contact_button {
     font-size: 20px;
@@ -74,3 +80,266 @@ form input {
     border: none;
     border-radius: 5px;
 }
+
+.photograph-profile{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 300px;
+        margin: 0 7%;
+        width: 79%;
+        padding: 0 3.5%;
+        background-color: #FAFAFA;
+        column-gap: 18px;
+}
+
+.image-warpper{
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.profile-pic{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.info-text{
+    margin: 0;
+}
+
+.info-text--name{
+    font-size: 64px;
+    color: #D3573C;
+    margin: 0;
+}
+
+.info-text--city{
+    font-size: 24px;
+    color: #901C1C;
+    margin-bottom: 19px;
+}
+
+.info-text--city{
+    font-size: 18px;
+}
+
+.sub-info {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: 376px;
+    padding: 15px 20px;
+    background: #DB8876;
+    color: #000000;
+    border-radius: 5px 5px 0 0;
+    z-index: 900;
+    font-size: 24px;
+}
+
+.picture-section {
+    margin: 0 7%;
+    margin-top: 20px;
+}
+
+.filter{
+    position: relative;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 25px;
+}
+
+.dropdown-checkbox {
+    display: none;
+}
+
+.filter_by{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    height: 69px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+}
+
+
+.selector-wrapper{
+    position: relative;
+    width: 170px;
+}
+
+.dropdown-menu__button{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 69px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    background: #901C1C;
+    color: #FFFFFF;
+    text-align: left;
+    font-size: 1em;
+    border: none;
+}
+
+.icon-filter{
+    z-index: 100;
+}
+
+.selector{
+    position: absolute;
+    display: none;
+    flex-direction: column-reverse;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 170px;
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+    animation: dropdown-apparition 500ms forwards;
+    transform-origin: top center;
+}
+
+.option{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 40px);
+    height: 69px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: #901C1C;
+    color: #FFFFFF;
+    font-size: 1em;
+    border: none;
+}
+
+.option.checked {
+    display: flex;
+    order: 1;
+}
+
+.option:not(.checked):after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 150px;
+    height: 1px;
+    background: #FAFAFA;
+}
+
+.container-picture{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 350px;
+}
+
+.card_description{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+    color: #901C1C; 
+}
+
+.card .image-warpper{
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+}
+
+.video-element{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card .image-warpper img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-likes{
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 1.3em;
+    border: none;
+    color: #901C1C;
+    background-color: inherit;
+    z-index: 40;
+}
+
+@media screen and (max-width: 900px){
+    .photograph-profile {
+        flex-direction: column-reverse;
+        text-align: center;
+        height: fit-content;
+        margin-top: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px ;
+        row-gap: 18px;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+@keyframes dropdown-apparition {
+    0% {
+        transform: scaleY(0.33);
+    }
+    
+    100% {
+        transform: scaleY(1);
+    }
+}
+

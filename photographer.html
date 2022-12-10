@@ -1,21 +1,90 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2ace4a1d36.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe </title>
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="/Front-End-Fisheye">
+        <img src="assets/images/logo.png" class="logo" />
+      </a>
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+
+      <section class="photograph-header">
+        <div class="photograph-profile">
+          <div class="photograph-info">
+            <div class="photograph-info_name">
+                <h1 class="info-text info-text--name"></h1>
+            </div>
+            <div class="photograph-info_city">
+              <h2 class="info-text info-text--city"></h2>
+            </div>
+            <div class="photograph-info_tagline">
+              <p class="info-text info-text--tagline"></p>
+            </div>
+          </div>
+          <div class="button-wrapper">
+            <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+          </div>
+          <div class="image-warpper">
+            <img class="profile-pic" src="">
+          </div>
+        </div>
+      </section>
+
+      <div class="sub-info footer">
+        <div class="sub-info__likes">
+          <span class="like-quantity"></span>
+          <i class="fa-solid fa-heart"></i>
+        </div>
+  
+        <div class="sub-info__price">
+          <span class="price"></span>
+        </div>
       </div>
+
+      <section class="picture-section">
+        <div class="filter">
+          <input class="dropdown-checkbox" type="checkbox" id="dropdown" id="filter_by">
+          <label class="filter_by" id="filter_by" for="dropdown">Trier par</label>
+          <div class="selector-wrapper">
+            <button id="dropdown-menu" class="dropdown-menu__button">
+              <span>Popularité</span>
+              <i class="fa-solid fa-chevron-down icon-filter"></i>
+            </button>
+            <ul role="listbox" class="selector" id="filter" tabindex="-1">
+              <li role="option" class="option" id="popularity">
+                <span>Popularité</span>
+                <i class="fa-solid fa-chevron-down icon-filter"></i>
+              </li>
+              <li role="option" class="option" id="date">
+                <span>Date</span>
+                <i class="fa-solid fa-chevron-down icon-filter"></i>
+              </li>
+              <li role="option" class="option" id="title">
+                <span>Titre</span>
+                <i class="fa-solid fa-chevron-down icon-filter"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container-picture">
+
+        </div>
+      </section>
+
     </main>
+
     <div id="contact_modal">
 			<div class="modal">
 				<header>
@@ -31,7 +100,7 @@
 				</form>
 			</div>
 		</div>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
+    <script type ="text/javascript" src="/Front-End-Fisheye/scripts/pages/photographer.js"></script>
+    <script type="text/javascript" src="/Front-End-Fisheye/scripts/utils/contactForm.js"></script>
   </body>
 </html>
