@@ -50,7 +50,7 @@ async function displayDataProfil(photographer,media) {
     const nameProfile = document.querySelector(".info-text--name");
     const cityProfile = document.querySelector(".info-text--city");
     const taglineProfile = document.querySelector(".info-text--tagline");
-    const like_quatity = document.querySelector(".like-quantity");
+    const like_quantity = document.querySelector(".like-quantity");
     const priceProfile = document.querySelector(".price");
     
     //----------------------------------------------------------------
@@ -60,7 +60,7 @@ async function displayDataProfil(photographer,media) {
     nameProfile.textContent = name;
     cityProfile.textContent = city +', '+country;
     taglineProfile.textContent = tagline;
-    like_quatity.textContent = getLikes(media);
+    // like_quantity.textContent = getLikes(media);
     priceProfile.textContent = price+'€/jour';
 };
 
@@ -76,12 +76,15 @@ function displayPicture(media, index){
     
     mediaCard.classList.add("card");
     mediaCard.id=index;
-
+    
     image_warpper.classList.add("image-warpper");
     description.classList.add("card_description");
     descrciption_btn.classList.add("btn-likes");
+    descrciption_btn.classList.add("likes");
+    like_counter.classList.add("like-counter");
     heart_icon.classList.add("fa-solid");
     heart_icon.classList.add("fa-heart");
+    heart_icon.classList.add("like-logo");
     
     description.setAttribute('id',media.id);
     description.appendChild(descrciption_title);
@@ -125,6 +128,13 @@ async function displayDataMedia(medias){
         createSlide(media);
         index++;
     });
+    /* Displaty the right slide when we open the slider */
+    let pictures = document.querySelectorAll(".card > .image-warpper");
+    /* Display the slider at the right picture */
+    displaySlideOnClick(pictures);
+
+    checkMyLikes(medias)
+    getMyTotalLikes(medias)
 }
 
 function createSlide(media){
@@ -175,18 +185,18 @@ const changeFilter = (medias) => {
         case "popularity":
             organizeByLikes(medias);
             displayDataMedia(medias);
-            break;
+        break;
         case "date":
             organizeByDate(medias);
             displayDataMedia(medias);
-            break;
+        break;
         case "title":
             organizeByTitles(medias);
             displayDataMedia(medias);
-            break;
+        break;
         default:
             checkedFilter
-            break;
+        break;
     }
 }
 
@@ -263,12 +273,6 @@ async function init() {
     filterSelector.addEventListener("click", () => {
         changeFilter(hisMedia);
     })
-
-        /* Displaty the right slide when we open the slider */
-        let pictures = document.querySelectorAll(".card");
-        console.log(pictures);
-        /* Display the slider at the right picture */
-        displaySlideOnClick(pictures);
 };
 
 init();
