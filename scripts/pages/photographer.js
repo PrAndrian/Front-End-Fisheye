@@ -35,7 +35,6 @@ async function getPhotographerData(data,photographer_id){
 function getLikes(medias){
     let likes = 0;
     medias.forEach((media) => {
-        // console.log(media.photographerId);
         likes += media.likes;
     });
 
@@ -115,9 +114,6 @@ function displayPicture(media, index){
         image.setAttribute('src',`assets/photographers/${media.image}`);
         image_warpper.appendChild(image);
     }
-
-    console.log(container_picture);
-    console.log(mediaCard);
     container_picture.appendChild(mediaCard); 
 }
 
@@ -126,15 +122,55 @@ async function displayDataMedia(medias){
     let index = 0;
     medias.map(media => {
         displayPicture(media,index);
+        createSlide(media);
         index++;
-    })
+    });
+}
+
+function createSlide(media){
+    const carousel__content = document.querySelector('.carousel__content');
+
+    const slide = document.createElement("a");
+        slide.classList.add("slide");
+        slide.setAttribute("aria-hidden", "true");
+        slide.setAttribute("href", "#");
+        slide.setAttribute("aria-label", media.title);
+
+        let mediaDiv;
+
+        if (media.image) {
+            const photoWrapper = `
+                <img src="./assets/photographers/${media.image}" alt="${media.likes} likes" />`;
+
+            mediaDiv = photoWrapper;
+        }
+
+        if (media.video) {
+            const videoWrapper = `
+                <video preload="metadata" id="player" mute loop  playsinline controls data-poster="${media.title}" title="${media.likes} likes">
+                    <source src="./assets/photographers/${media.video}#t=0.1" type="video/mp4" autostart="false" />
+                </video>`;
+            mediaDiv = videoWrapper;
+        }
+
+        slide.innerHTML = `
+            <div class="image-warpper">
+                    ${mediaDiv}
+            </div>
+            <div class="card_description">
+                <h2>
+                    ${media.title}
+                </h2>
+            </div>`;
+
+        carousel__content.appendChild(slide)
+        
 }
 
 const changeFilter = (medias) => {
     removeAllCardsAllSlides();
 
     const checkedFilter = document.querySelector(".checked").id;
-    console.log("this is what i want : "+checkedFilter);
     switch (checkedFilter) {
         case "popularity":
             organizeByLikes(medias);
@@ -219,6 +255,7 @@ async function init() {
     const data = await getPhotographers();
     const {thePhotographer,hisMedia} = await getPhotographerData(data,photographer_id);
 
+ 
     displayDataProfil(thePhotographer,hisMedia);
     displayDataMedia(hisMedia);
 
@@ -227,6 +264,11 @@ async function init() {
         changeFilter(hisMedia);
     })
 
+        /* Displaty the right slide when we open the slider */
+        let pictures = document.querySelectorAll(".card");
+        console.log(pictures);
+        /* Display the slider at the right picture */
+        displaySlideOnClick(pictures);
 };
 
 init();

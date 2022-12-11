@@ -278,7 +278,7 @@ input[type="checkbox" i] {
     justify-content: space-between;
     align-items: center;
     height: 20%;
-    color: #901C1C; 
+    color: #901C1C;
 }
 
 .card .image-warpper{
@@ -316,6 +316,110 @@ input[type="checkbox" i] {
     background-color: inherit;
     z-index: 40;
 }
+.carousel-section{
+    content: " ";
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #000000;
+    z-index: 999;
+}
+
+.carousel__bg{
+    content: " ";
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #FFFFFF;
+}
+
+.carousel__content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 88vh;
+    width: 73vw;
+}
+
+.slide{
+    display: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+.card__header{
+    height: fit-content;
+}
+
+.slide .image-wrapper{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+}
+
+.slide img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.prev, .next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev, .next:hover{
+    cursor: pointer;
+}
+
+.prev{
+    left: 7%;
+}
+
+.next{
+    right: 7%;
+}
+
+.arrow, .cross{
+    color:#901C1C;
+    font-size: 30px;
+}
+
+.close-btn{
+    position: absolute;
+    top:6%;
+    right: 7%;
+    z-index: 10;
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
 
 @media screen and (max-width: 900px){
     .photograph-profile {
@@ -330,6 +434,12 @@ input[type="checkbox" i] {
 
     .card {
         width: 100%;
+    }
+    .sub-info {
+        width: 100%;
+        right: 0;
+        padding: 15px 0;
+        justify-content: space-around;
     }
 }
 

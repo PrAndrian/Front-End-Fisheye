@@ -18,7 +18,6 @@
       </a>
     </header>
     <main id="main">
-
       <section class="photograph-header">
         <div class="photograph-profile">
           <div class="photograph-info">
@@ -84,7 +83,32 @@
       </section>
 
     </main>
+    <div id="carousel-section" class="carousel carousel-section" role="dialog" aria-hidden="true" aria-label="vu de l'image en plein écran">
 
+      <div class="carousel__bg">
+  
+        <a href="#" class="close-btn" role="button" aria-label="ferme la boite de dialogue">
+          <span class="fas fa-times cross" aria-hidden="true"></span>
+          <span class="sr-only">Fermer le carousel</span>
+        </a>
+  
+        <a href="#" class="prev" id="prev" role="button" aria-label="image précédente">
+          <span class="fas fa-angle-left arrow" aria-hidden="true"></span>
+          <span class="sr-only">Aller à la photographie précédente</span>
+        </a>
+  
+        <div id="carousel" class="carousel__content">
+              
+        </div>
+  
+        <a href="#" class="next" id="next" role="button" aria-label="image suivante">
+          <span class="fas fa-angle-right arrow" aria-hidden="true"></span>
+          <span class="sr-only">Aller à la photographie suivante</span>
+        </a>
+  
+      </div>
+  
+    </div>
     <div id="contact_modal">
 			<div class="modal">
 				<header>
@@ -101,6 +125,7 @@
 			</div>
 		</div>
     <script type ="text/javascript" src="/Front-End-Fisheye/scripts/pages/photographer.js"></script>
+    <script type="text/javascript" src="/Front-End-Fisheye/scripts/utils/sliders.js"></script>
     <script type="text/javascript" src="/Front-End-Fisheye/scripts/utils/contactForm.js"></script>
   </body>
 </html>
