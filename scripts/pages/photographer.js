@@ -42,7 +42,7 @@ function getLikes(medias){
 }
 
 async function displayDataProfil(photographer,media) {
-    const {name,portrait,city,country,tagline, price } = photographer;
+    const {name,portrait,city,country,tagline, price} = photographer;
 
     const picture = `assets/photographers/${portrait}`;
 
@@ -50,7 +50,7 @@ async function displayDataProfil(photographer,media) {
     const nameProfile = document.querySelector(".info-text--name");
     const cityProfile = document.querySelector(".info-text--city");
     const taglineProfile = document.querySelector(".info-text--tagline");
-    const like_quantity = document.querySelector(".like-quantity");
+    // const like_quantity = document.querySelector(".like-quantity");
     const priceProfile = document.querySelector(".price");
     
     //----------------------------------------------------------------
@@ -105,7 +105,7 @@ function displayPicture(media, index){
         video.classList.add("video-element");
 
         const source = document.createElement('source');
-        source.setAttribute('src',`assets/photographers/${media.video}`);
+        source.setAttribute('src',`assets/photographers/${media.photographerId}/${media.video}`);
         source.setAttribute('title',media.likes);
         source.setAttribute('type','video/mp4');
         source.setAttribute('autostart','false');
@@ -114,7 +114,7 @@ function displayPicture(media, index){
         image_warpper.appendChild(video);
     }else{
         const image = document.createElement('img');
-        image.setAttribute('src',`assets/photographers/${media.image}`);
+        image.setAttribute('src',`assets/photographers/${media.photographerId}/${media.image}`);
         image_warpper.appendChild(image);
     }
     container_picture.appendChild(mediaCard); 
@@ -150,7 +150,7 @@ function createSlide(media){
 
         if (media.image) {
             const photoWrapper = `
-                <img src="./assets/photographers/${media.image}" alt="${media.likes} likes" />`;
+                <img src="./assets/photographers/${media.photographerId}/${media.image}" alt="${media.likes} likes" />`;
 
             mediaDiv = photoWrapper;
         }
@@ -158,7 +158,7 @@ function createSlide(media){
         if (media.video) {
             const videoWrapper = `
                 <video preload="metadata" id="player" mute loop  playsinline controls data-poster="${media.title}" title="${media.likes} likes">
-                    <source src="./assets/photographers/${media.video}#t=0.1" type="video/mp4" autostart="false" />
+                    <source src="./assets/photographers/${media.photographerId}/${media.video}#t=0.1" type="video/mp4" autostart="false" />
                 </video>`;
             mediaDiv = videoWrapper;
         }
