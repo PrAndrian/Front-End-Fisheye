@@ -76,3 +76,20 @@ h1 {
     font-size: 12px;
     color: #757575;
 }
+
+@media screen and (max-width: 900px){
+    .photographer_section {
+        grid-template-columns: 1fr;
+    }
+
+    header{
+        flex-direction: column;
+    }
+
+    h1,.logo{
+        margin: 0;
+    }
+    .logo{
+        padding-top: 10px;
+    }
+}

@@ -55,7 +55,7 @@
         <div class="filter">
           <input class="dropdown-checkbox" type="checkbox" id="dropdown" id="filter_by">
           <label class="filter_by" id="filter_by" for="dropdown">Trier par</label>
-          <div class="selector-wrapper">
+          <div class="selector-warpper">
             <button id="dropdown-menu" class="dropdown-menu__button">
               <span>Popularité</span>
               <i class="fa-solid fa-chevron-down icon-filter"></i>
@@ -109,23 +109,70 @@
       </div>
   
     </div>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
+    
+    
+    <div id="contact-modal-section" class="contact_modal contact-modal-section" role="dialog" aria-hidden="true" style="display: none;">
+
+      <div class="modal-bg"></div>
+  
+      <div class="modal" id="contact_modal" aria-labelledby="contact__header">
+  
+        <a href="#" class="close-modal-btn-wrapper" id="close-modal-btn-wrapper">
+          <img id="close-modal-btn" class="close-modal-btn" src="assets/icons/close.svg" alt="ferme le formulaire de contact">
+        </a><!-- .close-modal-btn-wrapper -->
+  
+        <header id="contact__header" class="contact__header">
+          <h2 class="contact__header__title">Contactez-moi</h2>
+          <h2 id="contact-photographer-name" class="contact__header__title">Mimi Keel</h2>
+        </header><!-- #contact__header -->
+  
+        <form action="photographer.html" method="get" class="form contact-form">
+  
+          <fieldset class="fieldset information--fieldset">
+            <legend class="legend information---legend">Vos coordonnées</legend>
+  
+            <div class="form-data">
+              <label class="label" for="firstName">Prénom</label>
+              <input class="contact-form__input" type="text" name="firstName" id="firstName" data-type="name" placeholder="Jean" aria-invalid="true" required="" aria-required="true">
+              <span class="error__message" aria-hidden="true">Veuillez entrer un prénom valide.</span>
+            </div><!-- .form-data for prénom -->
+  
+            <div class="form-data">
+              <label class="label" for="lastName">Nom</label>
+              <input class="contact-form__input" type="text" name="lastName" id="lastName" data-type="name" placeholder="Dupont" aria-invalid="true" required="" aria-required="true">
+              <span class="error__message" aria-hidden="true">Veuillez entrer un nom valide.</span>
+            </div><!-- .form-data for nom -->
+  
+            <div class="form-data">
+              <label class="label" for="email">Email</label>
+              <input class="contact-form__input" type="email" name="email" id="email" data-type="email" placeholder="adresse@email.com" aria-labelledby="email" aria-describedby="email-format" required="" aria-invalid="true" aria-required="true">
+              <span class="error__message" aria-hidden="true">Veuillez entrer un email valide.</span>
+              <span id="email-format" class="hidden">adresse@email.com</span>
+            </div><!-- .form-data for email -->
+  
+          </fieldset> <!-- .information--fieldset -->
+  
+          <fieldset class="fieldset message--fieldset">
+            <legend class="legend message-legend">Votre message</legend>
+  
+            <div class="form-data">
+              <label class="label" for="message">Votre message</label>
+              <textarea class="contact-form__input contact-form__input--message-content" name="message" id="message" data-type="message" placeholder="Votre message ici..." required="" aria-invalid="true" aria-required="true"></textarea>
+              <span class="error__message" aria-hidden="true">Votre message doit comporter au moins 200 caractères.</span>
+            </div><!-- .form-data for message -->
+  
+          </fieldset><!-- .message--fieldset -->
+  
+  
+          <button type="button" id="form-submit-btn" class="contact_button contact_button--submit">Envoyer</button>
+  
+        </form> <!-- contact-form -->
+  
+      </div> <!-- modal -->
+  
+    </div>
     <script type ="text/javascript" src="/Front-End-Fisheye/scripts/pages/photographer.js"></script>
-    <script type="text/javascript" src="/Front-End-Fisheye/scripts/utils/sliders.js"></script>
     <script type="text/javascript" src="/Front-End-Fisheye/scripts/utils/contactForm.js"></script>
+    <script type="text/javascript" src="/Front-End-Fisheye/scripts/utils/sliders.js"></script>
   </body>
 </html>
