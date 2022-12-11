@@ -168,7 +168,7 @@ function createSlide(media){
                     ${mediaDiv}
             </div>
             <div class="card_description">
-                <h2>
+                <h2 class="card__header__title">
                     ${media.title}
                 </h2>
             </div>`;
