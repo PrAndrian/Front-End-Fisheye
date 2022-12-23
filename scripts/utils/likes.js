@@ -4,8 +4,6 @@
  * */
 const checkMyLikes = (pictureArray) => {
     const likes = document.querySelectorAll(".likes");
-    console.log("LIOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIK : "+likes.length)
-
     likes.forEach(like => {
         like.addEventListener("click", () => {
             let picLikeCounter = parseInt(like.querySelector(".like-counter").innerHTML);
@@ -13,7 +11,6 @@ const checkMyLikes = (pictureArray) => {
    
 
             pictureArray.forEach(pic => {
-                console.log(pic.likes);
                 if (pic.id === picId) {
                     if (like.getAttribute("checked") === "true") {
                         like.setAttribute("checked", false);
@@ -47,12 +44,9 @@ const checkMyLikes = (pictureArray) => {
  * */
 const getMyTotalLikes = (pictureArray) => {
     let totalLikes = 0;
-    console.log(totalLikes);
     pictureArray.forEach(pic => {
         totalLikes += pic.likes;
     })
-    console.log(totalLikes);
     const totalLikeDOM = document.querySelector(".like-quantity");
-    console.log(totalLikeDOM);
     totalLikeDOM.innerHTML = totalLikes;
 }

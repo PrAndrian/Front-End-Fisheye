@@ -2,7 +2,6 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const photographer_id = urlParams.get('id');
-console.log(photographer_id);
 
 async function getPhotographers() {
     // Penser à remplacer par les données récupérées dans le json
@@ -54,6 +53,7 @@ async function displayDataProfil(photographer,media) {
     priceProfile.textContent = price+'€/jour';
 };
 
+
 async function init() {
     const data = await getPhotographers();
     const {thePhotographer,hisMedia} = await getPhotographerData(data,photographer_id);
@@ -61,6 +61,12 @@ async function init() {
  
     displayDataProfil(thePhotographer,hisMedia);
     displayDataMedia(hisMedia);
+    createSlider(hisMedia);
+
+    /* Display the right slide when we open the slider */
+    let pictures = document.querySelectorAll(".card > .image-warpper");
+    /* Display the slider at the right picture */
+    displaySlideOnClick(pictures);
 
     const filterSelector = document.getElementById("filter");
     filterSelector.addEventListener("click", () => {

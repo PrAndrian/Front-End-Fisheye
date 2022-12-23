@@ -59,13 +59,8 @@ async function displayDataMedia(medias){
     let index = 0;
     medias.map(media => {
         displayPicture(media,index);
-        createSlide(media);
         index++;
     });
-    /* Displaty the right slide when we open the slider */
-    let pictures = document.querySelectorAll(".card > .image-warpper");
-    /* Display the slider at the right picture */
-    displaySlideOnClick(pictures);
 
     checkMyLikes(medias)
     getMyTotalLikes(medias)

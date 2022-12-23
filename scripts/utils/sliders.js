@@ -5,6 +5,13 @@ const body = document.querySelector("body");
 
 let currentSlide;
 
+// create slider;
+function createSlider(medias){
+    medias.map(media => {
+        createSlide(media);
+    })
+}
+
 // create slide;
 function createSlide(media){
     const carousel__content = document.querySelector('.carousel__content');
