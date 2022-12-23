@@ -3,15 +3,53 @@ const carouselSection = document.getElementById("carousel-section");
 // const carousel = document.getElementById("carousel");
 const body = document.querySelector("body");
 
-
-// let currentSlide;
 let currentSlide;
+
+// create slide;
+function createSlide(media){
+    const carousel__content = document.querySelector('.carousel__content');
+
+    const slide = document.createElement("a");
+        slide.classList.add("slide");
+        slide.setAttribute("aria-hidden", "true");
+        slide.setAttribute("href", "#");
+        slide.setAttribute("aria-label", media.title);
+
+        let mediaDiv;
+
+        if (media.image) {
+            const photoWrapper = `
+                <img src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.image}" alt="${media.likes} likes" />`;
+
+            mediaDiv = photoWrapper;
+        }
+
+        if (media.video) {
+            const videoWrapper = `
+                <video preload="metadata" id="player" mute loop  playsinline controls data-poster="${media.title}" title="${media.likes} likes">
+                    <source src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.video}#t=0.1" type="video/mp4" autostart="false" />
+                </video>`;
+            mediaDiv = videoWrapper;
+        }
+
+        slide.innerHTML = `
+            <div class="image-warpper">
+                    ${mediaDiv}
+            </div>
+            <div class="card_description">
+                <h2 class="card__header__title">
+                    ${media.title}
+                </h2>
+            </div>`;
+
+        carousel__content.appendChild(slide)
+        
+}
 
 /**
  * displaySlide()
  * display the slide according the right index 
  * */
-
 function displaySlide(n) {
     const slides = document.querySelectorAll(".slide");
     currentSlide = n;
@@ -140,6 +178,7 @@ window.addEventListener("keyup", (e) => {
         previousSlide(1);
     }
 });
+
 
 const main = document.querySelector("main");
 const header = document.querySelector("header");
