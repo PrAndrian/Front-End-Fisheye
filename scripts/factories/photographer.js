@@ -11,11 +11,13 @@ function photographerFactory(data) {
         const container_img = document.createElement( 'div' );
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
+        img.setAttribute("alt","Image_profil")
         const h2 = document.createElement( 'h2' );
 
         const location = document.createElement( 'span' );
         const sentence = document.createElement( 'span' );
         const dayprice = document.createElement( 'span' );
+
 
         container_img.classList.add('container_img');
         location.classList.add('location');

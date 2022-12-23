@@ -31,16 +31,6 @@ async function getPhotographerData(data,photographer_id){
     return {thePhotographer,hisMedia}
 };
 
-
-function getLikes(medias){
-    let likes = 0;
-    medias.forEach((media) => {
-        likes += media.likes;
-    });
-
-    return likes;
-}
-
 async function displayDataProfil(photographer,media) {
     const {name,portrait,city,country,tagline, price} = photographer;
 
@@ -115,6 +105,7 @@ function displayPicture(media, index){
     }else{
         const image = document.createElement('img');
         image.setAttribute('src',`/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.image}`);
+        image.setAttribute('alt',media.image);
         image_warpper.appendChild(image);
     }
     container_picture.appendChild(mediaCard); 
