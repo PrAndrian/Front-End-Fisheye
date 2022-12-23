@@ -8,14 +8,17 @@ const changeFilter = (medias) => {
         case "popularity":
             organizeByLikes(medias);
             displayDataMedia(medias);
+            createSlider(medias);
         break;
         case "date":
             organizeByDate(medias);
             displayDataMedia(medias);
+            createSlider(medias);
         break;
         case "title":
             organizeByTitles(medias);
             displayDataMedia(medias);
+            createSlider(medias);
         break;
         default:
             checkedFilter

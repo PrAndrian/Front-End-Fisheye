@@ -63,11 +63,6 @@ async function init() {
     displayDataMedia(hisMedia);
     createSlider(hisMedia);
 
-    /* Display the right slide when we open the slider */
-    let pictures = document.querySelectorAll(".card > .image-warpper");
-    /* Display the slider at the right picture */
-    displaySlideOnClick(pictures);
-
     const filterSelector = document.getElementById("filter");
     filterSelector.addEventListener("click", () => {
         changeFilter(hisMedia);
