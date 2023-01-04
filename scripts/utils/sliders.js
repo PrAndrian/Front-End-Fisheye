@@ -44,7 +44,7 @@ function createSlide(media){
         if (media.video) {
             const videoWrapper = `
                 <video preload="metadata" id="player" mute loop  playsinline autoplay controls data-poster="${media.title}" title="${media.likes} likes">
-                    <source src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.video}#t=0.1" type="video/mp4" />
+                    <source src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.video}#t=0.1" type="video/mp4" autostart="false" />
                 </video>`;
             mediaDiv = videoWrapper;
         }
