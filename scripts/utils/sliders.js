@@ -98,13 +98,14 @@ function displaySlide(n) {
  * start the video when the user clicks on it.
  */
 function playVideo() {
-    const videos = document.querySelectorAll("video");
+    console.log("playVideo")
+    // const videos = document.querySelectorAll("video");
 
-    videos.forEach(video => {
-        video.addEventListener("click", () => {
-            video.play();
-        });
-    });
+    // videos.forEach(video => {
+    //     video.addEventListener("click", () => {
+    //         video.play();
+    //     });
+    // });
 }
 
 /**
