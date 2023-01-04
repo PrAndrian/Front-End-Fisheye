@@ -1,7 +1,6 @@
 async function getPhotographers() {
         // Penser à remplacer par les données récupérées dans le json
-        // const res = await fetch('/Front-End-Fisheye/data/photographers.json');
-        const res = await fetch('/data/photographers.json');
+        const res = await fetch('/Front-End-Fisheye/data/photographers.json');
         const photographers = res.json();
         // et bien retourner le tableau photographers seulement une fois
         return photographers;

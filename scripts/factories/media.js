@@ -42,8 +42,7 @@ function mediaFactory(data){
             videoDom.classList.add("video-element");
 
             const source = document.createElement('source');
-            // source.setAttribute('src',`/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.video}`);
-            source.setAttribute('src',`assets/photographers/${photographerId}/${video}`);
+            source.setAttribute('src',`/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.video}`);
             source.setAttribute('title',likes);
             source.setAttribute('type','video/mp4');
             source.setAttribute('autostart','false');
@@ -52,8 +51,7 @@ function mediaFactory(data){
             image_warpper.appendChild(videoDom);
         }else{
             const imageDom = document.createElement('img');
-            // image.setAttribute('src',`/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.image}`);
-            imageDom.setAttribute('src',`assets/photographers/${photographerId}/${image}`);
+            image.setAttribute('src',`/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.image}`);
             imageDom.setAttribute('alt',image);
             image_warpper.appendChild(imageDom);
         }

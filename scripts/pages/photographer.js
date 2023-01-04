@@ -5,8 +5,7 @@ const photographer_id = urlParams.get('id');
 
 async function getPhotographers() {
     // Penser à remplacer par les données récupérées dans le json
-    // const res = await fetch('/Front-End-Fisheye/data/photographers.json');
-    const res = await fetch('/data/photographers.json');
+    const res = await fetch('/Front-End-Fisheye/data/photographers.json');
     const photographers = res.json();
     // et bien retourner le tableau photographers seulement une fois
     return photographers;
@@ -34,8 +33,7 @@ async function getPhotographerData(data,photographer_id){
 async function displayDataProfil(photographer,media) {
     const {name,portrait,city,country,tagline, price} = photographer;
 
-    // const picture = `/Front-End-Fisheye/assets/photographers/${portrait}`;
-    const picture = `/assets/photographers/${portrait}`;
+    const picture = `/Front-End-Fisheye/assets/photographers/${portrait}`;
 
     const profile_picture = document.querySelector(".profile-pic");
     const nameProfile = document.querySelector(".info-text--name");
@@ -50,7 +48,6 @@ async function displayDataProfil(photographer,media) {
     nameProfile.textContent = name;
     cityProfile.textContent = city +', '+country;
     taglineProfile.textContent = tagline;
-    // like_quantity.textContent = getLikes(media);
     priceProfile.textContent = price+'€/jour';
 };
 

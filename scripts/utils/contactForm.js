@@ -2,7 +2,9 @@ const submitBtn = document.getElementById("form-submit-btn");
 const closeContactBtn = document.getElementById("close-modal-btn-wrapper");
 const contactModalSection = document.getElementById("contact-modal-section");
 
+//listen to click on submit form button
 submitBtn.addEventListener("click", (e) => validateForm(e) );
+
 /**
  * displayModal():
  * display the contact form modal
@@ -26,6 +28,10 @@ function closeModal() {
     contactModalSection.style.display = "none";
 }
 
+/**
+ * closeModal():
+ * reset the contact form modal
+ **/
 function resetContactForm() {
     closeModal();
     inputs.forEach(input => {
@@ -38,6 +44,11 @@ function resetContactForm() {
    
 }
 
+/**
+ * validateForm(event)
+ * @param {FormEvent} event event of the click to the submit
+ * send value of contact form to console
+ **/
 function validateForm(event){
     event.preventDefault();
     const firstName = document.querySelector('#firstName').value
@@ -54,9 +65,15 @@ function validateForm(event){
     
     console.log(formData)
 }
+
+
 const main = document.querySelector("main");
 const header = document.querySelector("header");
 
+/**
+ * hideMainDom():
+ * hide main dom
+ **/
 function hideMainDom() {
     main.setAttribute("aria-hidden", "true");
     main.classList.add("hidden");
@@ -64,6 +81,10 @@ function hideMainDom() {
     header.classList.add("hidden");
 }
 
+/**
+ * displayMainDom():
+ * display main dom
+ **/
 function displayMainDom() {
     main.setAttribute("aria-hidden", "false");
     main.classList.remove("hidden");
