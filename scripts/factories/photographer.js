@@ -1,9 +1,12 @@
+// generates photographers cards in home page
+
 function photographerFactory(data) {
     const { id,name, portrait, city, country,tagline, price } = data;
 
     const picture = `assets/photographers/${portrait}`;
-    const url = `/Front-End-Fisheye/photographer.html?id=${id}`;
-
+    // const url = `/Front-End-Fisheye/photographer.html?id=${id}`;
+    const url = `photographer.html?id=${id}`;
+    
     function getUserCardDOM() {
         const redirect = document.createElement( 'a' );
         redirect.setAttribute('href',url)

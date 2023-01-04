@@ -5,7 +5,8 @@ const photographer_id = urlParams.get('id');
 
 async function getPhotographers() {
     // Penser à remplacer par les données récupérées dans le json
-    const res = await fetch('/Front-End-Fisheye/data/photographers.json');
+    // const res = await fetch('/Front-End-Fisheye/data/photographers.json');
+    const res = await fetch('/data/photographers.json');
     const photographers = res.json();
     // et bien retourner le tableau photographers seulement une fois
     return photographers;
@@ -33,13 +34,13 @@ async function getPhotographerData(data,photographer_id){
 async function displayDataProfil(photographer,media) {
     const {name,portrait,city,country,tagline, price} = photographer;
 
-    const picture = `/Front-End-Fisheye/assets/photographers/${portrait}`;
+    // const picture = `/Front-End-Fisheye/assets/photographers/${portrait}`;
+    const picture = `/assets/photographers/${portrait}`;
 
     const profile_picture = document.querySelector(".profile-pic");
     const nameProfile = document.querySelector(".info-text--name");
     const cityProfile = document.querySelector(".info-text--city");
     const taglineProfile = document.querySelector(".info-text--tagline");
-    // const like_quantity = document.querySelector(".like-quantity");
     const priceProfile = document.querySelector(".price");
     
     //----------------------------------------------------------------
@@ -53,13 +54,26 @@ async function displayDataProfil(photographer,media) {
     priceProfile.textContent = price+'€/jour';
 };
 
+async function displayDataMedia(medias){
+    const container_picture = document.querySelector('.container-picture');
+    let index = 0;
+
+    medias.forEach((media) => {
+        const mediaModel = mediaFactory(media);
+        const mediaCardDOM = mediaModel.getMediaCardDOM(index);
+        container_picture.appendChild(mediaCardDOM);
+        index++;
+    });
+    checkMyLikes(medias)
+    getMyTotalLikes(medias)
+}
 
 async function init() {
     const data = await getPhotographers();
     const {thePhotographer,hisMedia} = await getPhotographerData(data,photographer_id);
-
  
     displayDataProfil(thePhotographer,hisMedia);
+    // organizeByLikes(hisMedia);
     displayDataMedia(hisMedia);
     createSlider(hisMedia);
 

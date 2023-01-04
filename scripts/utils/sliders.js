@@ -12,7 +12,7 @@ function createSlider(medias){
     let pictures = document.querySelectorAll(".card > .image-warpper");
     /* Display the slider at the right picture */
     displaySlideOnClick(pictures);
-    console.log("something is strange");
+    // console.log("something is strange");
     
     
     medias.map(media => {
@@ -34,7 +34,8 @@ function createSlide(media){
 
         if (media.image) {
             const photoWrapper = `
-                <img src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.image}" alt="${media.likes} likes" />`;
+                <img src="assets/photographers/${media.photographerId}/${media.image}" alt="${media.likes} likes" />`;
+                // <img src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.image}" alt="${media.likes} likes" />`;
 
             mediaDiv = photoWrapper;
         }
@@ -42,8 +43,9 @@ function createSlide(media){
         if (media.video) {
             const videoWrapper = `
                 <video preload="metadata" id="player" mute loop  playsinline controls data-poster="${media.title}" title="${media.likes} likes">
-                    <source src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.video}#t=0.1" type="video/mp4" autostart="false" />
+                    <source src="assets/photographers/${media.photographerId}/${media.video}#t=0.1" type="video/mp4" autostart="false" loop="true" />
                 </video>`;
+                // <source src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.video}#t=0.1" type="video/mp4" autostart="false" />
             mediaDiv = videoWrapper;
         }
 
@@ -58,7 +60,6 @@ function createSlide(media){
             </div>`;
 
         carousel__content.appendChild(slide)
-        
 }
 
 /**
@@ -172,7 +173,7 @@ next.addEventListener("click", () => {
 // it triggers closeModal when escape is pressed 
 document.addEventListener("keydown", event => {
     const pressedKey = event.key;
-    console.log(pressedKey);
+    // console.log(pressedKey);
 
     if (pressedKey === "Escape") {
         closeModal();
@@ -184,7 +185,7 @@ document.addEventListener("keydown", event => {
 /* event listener when the user press the keyboard */
 window.addEventListener("keyup", (e) => {
     e.preventDefault();
-    console.log(e.key);
+    // console.log(e.key);
     
     if (e.key === "ArrowRight") {
         nextSlide(1);

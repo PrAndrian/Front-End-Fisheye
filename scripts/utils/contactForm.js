@@ -38,7 +38,22 @@ function resetContactForm() {
    
 }
 
+function validateForm(event){
+    event.preventDefault();
+    const firstName = document.querySelector('#firstName').value
+    const lastName = document.querySelector('#lastName').value
+    const email = document.querySelector('#email').value
+    const message = document.querySelector('#message').value
 
+    const formData = {
+        prenom : firstName,
+        nom : lastName,
+        email : email,
+        message : message,
+    }
+    
+    console.log(formData)
+}
 const main = document.querySelector("main");
 const header = document.querySelector("header");
 

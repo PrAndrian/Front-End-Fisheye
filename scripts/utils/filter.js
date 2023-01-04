@@ -37,7 +37,7 @@ dropdownBtn.addEventListener("click", () => {
     dropdownBtn.style.display = "none";
 })
 
-options.forEach(option => {
+options.forEach(option =>{
     option.addEventListener("click", () => {
         dropdownBtn.innerHTML = option.innerHTML;
         dropdownBtn.setAttribute("aria-haspopup", true);

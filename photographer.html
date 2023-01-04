@@ -13,11 +13,12 @@
   </head>
   <body>
     <header>
-      <a href="/Front-End-Fisheye" aria-label="Fisheye logo">
+      <a href="/" aria-label="Fisheye logo">
         <img src="assets/images/logo.png" class="logo" />
       </a>
     </header>
     <main id="main">
+      <!-- Profile section -->
       <section class="photograph-header">
         <div class="photograph-profile">
           <div class="photograph-info">
@@ -39,7 +40,7 @@
           </div>
         </div>
       </section>
-
+      <!-- Fixed section -->
       <div class="sub-info footer">
         <div class="sub-info__likes">
           <span class="like-quantity"></span>
@@ -51,6 +52,7 @@
         </div>
       </div>
 
+      <!-- Fixed section  -->
       <section class="picture-section">
         <div class="filter">
           <input class="dropdown-checkbox" type="checkbox" id="dropdown" id="filter_by">
@@ -83,10 +85,10 @@
       </section>
 
     </main>
-    <div id="carousel-section" class="carousel carousel-section" role="dialog" aria-hidden="true" aria-label="vu de l'image en plein écran">
 
+    <!-- Slider/Carousel section -->
+    <div id="carousel-section" class="carousel carousel-section" role="dialog" aria-hidden="true" aria-label="vu de l'image en plein écran">
       <div class="carousel__bg">
-  
         <a href="#" class="close-btn" role="button" aria-label="ferme la boite de dialogue">
           <span class="fas fa-times cross" aria-hidden="true"></span>
           <span class="sr-only">Fermer le carousel</span>
@@ -105,19 +107,17 @@
           <span class="fas fa-angle-right arrow" aria-hidden="true"></span>
           <span class="sr-only">Aller à la photographie suivante</span>
         </a>
-  
       </div>
-  
     </div>
     
-    
+    <!-- Contact section -->
     <div id="contact-modal-section" class="contact_modal contact-modal-section" role="dialog" aria-hidden="true" style="display: none;">
 
       <div class="modal-bg"></div>
   
       <div class="modal" id="contact_modal" aria-labelledby="contact__header">
   
-        <a href="#" class="close-modal-btn-wrapper" id="close-modal-btn-wrapper">
+        <a href="#" class="close-modal-btn-wrapper" id="close-modal-btn-wrapper" onclick="closeModal()">
           <img id="close-modal-btn" class="close-modal-btn" src="assets/icons/close.svg" alt="ferme le formulaire de contact">
         </a>
   
@@ -160,7 +160,6 @@
               <textarea class="contact-form__input contact-form__input--message-content" name="message" id="message" data-type="message" placeholder="Votre message ici..." required="" aria-invalid="true" aria-required="true"></textarea>
               <span class="error__message" aria-hidden="true">Votre message doit comporter au moins 200 caractères.</span>
             </div>
-  
           </fieldset>
   
   
@@ -171,11 +170,12 @@
       </div> 
 
     </div>
-    <script type="text/javascript" src="/Front-End-Fisheye/scripts/factories/media.js"></script>
-    <script type="text/javascript" src="/Front-End-Fisheye/scripts/utils/contactForm.js"></script>
-    <script type="text/javascript" src="/Front-End-Fisheye/scripts/utils/filter.js"></script>
-    <script type="text/javascript" src="/Front-End-Fisheye/scripts/utils/sliders.js"></script>
-    <script type="text/javascript" src="/Front-End-Fisheye/scripts/utils/likes.js"></script>
-    <script type ="text/javascript" src="/Front-End-Fisheye/scripts/pages/photographer.js"></script>
+    <!-- Script -->
+    <script type="text/javascript" src="/scripts/factories/media.js"></script>
+    <script type="text/javascript" src="/scripts/utils/contactForm.js"></script>
+    <script type="text/javascript" src="/scripts/utils/filter.js"></script>
+    <script type="text/javascript" src="/scripts/utils/sliders.js"></script>
+    <script type="text/javascript" src="/scripts/utils/likes.js"></script>
+    <script type ="text/javascript" src="/scripts/pages/photographer.js"></script>
   </body>
 </html>
