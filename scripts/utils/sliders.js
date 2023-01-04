@@ -1,26 +1,28 @@
 const closeBtn = document.querySelector(".close-btn");
 const carouselSection = document.getElementById("carousel-section");
-// const carousel = document.getElementById("carousel");
 const body = document.querySelector("body");
 
 let currentSlide;
 
-// create slider;
+/**
+ * createSlider(medias):
+ * @param {Object} medias
+ * To all media image display sliders on click and create slide for each media
+ **/
 function createSlider(medias){
-
-    /* Display the right slide when we open the slider */
     let pictures = document.querySelectorAll(".card > .image-warpper");
-    /* Display the slider at the right picture */
-    displaySlideOnClick(pictures);
-    // console.log("something is strange");
-    
+    displaySlideOnClick(pictures);    
     
     medias.map(media => {
         createSlide(media);
     })
 }
 
-// create slide;
+/**
+ * createSlide(media):
+ * @param {Object} medias
+ * Create the slide for the media specified
+ **/
 function createSlide(media){
     const carousel__content = document.querySelector('.carousel__content');
 
@@ -34,8 +36,7 @@ function createSlide(media){
 
         if (media.image) {
             const photoWrapper = `
-                <img src="assets/photographers/${media.photographerId}/${media.image}" alt="${media.likes} likes" />`;
-                // <img src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.image}" alt="${media.likes} likes" />`;
+                <img src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.image}" alt="${media.likes} likes" />`;
 
             mediaDiv = photoWrapper;
         }
@@ -43,9 +44,8 @@ function createSlide(media){
         if (media.video) {
             const videoWrapper = `
                 <video preload="metadata" id="player" mute loop  playsinline controls data-poster="${media.title}" title="${media.likes} likes">
-                    <source src="assets/photographers/${media.photographerId}/${media.video}#t=0.1" type="video/mp4" autostart="false" loop="true" />
+                    <source src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.video}#t=0.1" type="video/mp4" autostart="false" />
                 </video>`;
-                // <source src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.video}#t=0.1" type="video/mp4" autostart="false" />
             mediaDiv = videoWrapper;
         }
 
@@ -64,6 +64,7 @@ function createSlide(media){
 
 /**
  * displaySlide()
+ * @param {Int} n represents the number of current slide
  * display the slide according the right index 
  * */
 function displaySlide(n) {
@@ -74,14 +75,17 @@ function displaySlide(n) {
         slide.style.display = "none";
         slide.setAttribute("aria-hidden", "true");
     });
+    
+    //loop to beginning of slider
     if (currentSlide > slides.length - 1) {
         currentSlide = 0;
     }
+    //loop to end of slider
     if (currentSlide < 0) {
         currentSlide = slides.length - 1;
     }
 
-    // const slideTitle = slides[currentSlide].querySelector(".card__header__title").innerHTML;
+    // display current Slide
     slides[currentSlide].style.display = "block";
     slides[currentSlide].setAttribute("aria-hidden", "false");
     body.classList.add("no-scroll");
@@ -104,7 +108,8 @@ function playVideo() {
 }
 
 /**
- * previousSlide()
+ * previousSlide(n)
+ * @param {Int} n represents the number of current slide
  * display the previous slide 
  * */
 function previousSlide(n) {
@@ -113,7 +118,8 @@ function previousSlide(n) {
 }
 
 /**
- * nextSlide()
+ * nextSlide(n)
+ * @param {Int} n represents the number of current slide
  * display the next slide 
  * */
 function nextSlide(n) {
@@ -124,6 +130,7 @@ function nextSlide(n) {
 
 /**
  * displaySlideOnClick()
+ * @param {Array} pictureArray
  * add eventlistener to every picture. When one picture is clicked, the carousel is opened at the right slide 
  * */
 function displaySlideOnClick(pictureArray) {
@@ -162,10 +169,12 @@ closeBtn.addEventListener("click", () => {
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
 
+// it triggers previousSlide when escape is pressed 
 prev.addEventListener("click", () => {
     previousSlide(1);
 });
 
+// it triggers nextSlide when escape is pressed 
 next.addEventListener("click", () => {
     nextSlide(1);
 })
