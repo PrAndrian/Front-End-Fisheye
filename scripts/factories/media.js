@@ -50,7 +50,7 @@ function mediaFactory(data){
             videoDom.appendChild(source);
             image_warpper.appendChild(videoDom);
         }else{
-            const imageDom = document.createElement('img');
+            const imageDom = document.createElement('img'); 
             imageDom.setAttribute('src',`/Front-End-Fisheye/assets/photographers/${photographerId}/${image}`);
             imageDom.setAttribute('alt',image);
             image_warpper.appendChild(imageDom);
