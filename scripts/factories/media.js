@@ -45,7 +45,7 @@ function mediaFactory(data){
             source.setAttribute('src',`/Front-End-Fisheye/assets/photographers/${photographerId}/${video}`);
             source.setAttribute('title',likes);
             source.setAttribute('type','video/mp4');
-            // source.setAttribute('autostart','false');
+            source.setAttribute('autostart','false');
             
             videoDom.appendChild(source);
             image_warpper.appendChild(videoDom);

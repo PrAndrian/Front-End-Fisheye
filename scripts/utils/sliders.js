@@ -44,7 +44,7 @@ function createSlide(media){
         if (media.video) {
             const videoWrapper = `
                 <video preload="metadata" id="player" mute loop  playsinline controls data-poster="${media.title}" title="${media.likes} likes">
-                    <source src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.video}#t=0.1" type="video/mp4" />
+                    <source src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.video}#t=0.1" type="video/mp4" autostart="false" />
                 </video>`;
             mediaDiv = videoWrapper;
         }
@@ -137,7 +137,6 @@ function displaySlideOnClick(pictureArray) {
     pictureArray.forEach(picture => {
         picture.addEventListener("click", () => {
             const index = parseInt(picture.parentElement.id);
-            // const index = parseInt(picture.id);
             carouselSection.style.display = "block";
             carouselSection.setAttribute("aria-hidden", "false");
             hideMainDom();

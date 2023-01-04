@@ -12,7 +12,6 @@ submitBtn.addEventListener("click", (e) => validateForm(e) );
 function displayModal() {
     contactModalSection.setAttribute("aria-hidden", "false");
     hideMainDom();
-    console.log('OKOKK');
     contactModalSection.style.display = "flex";
     closeContactBtn.focus();
 }
