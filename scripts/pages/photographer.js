@@ -53,13 +53,11 @@ async function displayDataProfil(photographer,media) {
 
 async function displayDataMedia(medias){
     const container_picture = document.querySelector('.container-picture');
-    let index = 0;
 
-    medias.forEach((media) => {
+    medias.forEach((media,index) => {
         const mediaModel = mediaFactory(media);
         const mediaCardDOM = mediaModel.getMediaCardDOM(index);
         container_picture.appendChild(mediaCardDOM);
-        index++;
     });
     checkMyLikes(medias)
     getMyTotalLikes(medias)

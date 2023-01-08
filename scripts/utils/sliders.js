@@ -108,6 +108,20 @@ function playVideo() {
 }
 
 /**
+ * pauseVideo():
+ * pause the video when the user closeSlider.
+ */
+function pauseVideo() {
+    const videos = document.querySelectorAll("video");
+
+    closeBtn.addEventListener("click", () => {
+        videos.forEach(video => {
+            video.pause();
+        });
+    });
+}
+
+/**
  * previousSlide(n)
  * @param {Int} n represents the number of current slide
  * display the previous slide 
@@ -161,6 +175,7 @@ function closeCarousel() {
 
 closeBtn.addEventListener("click", () => {
     closeCarousel();
+    pauseVideo();
 });
 
 
