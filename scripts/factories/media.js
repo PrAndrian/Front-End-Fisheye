@@ -16,7 +16,7 @@ function mediaFactory(data){
         mediaCard.id=index;
         
         image_warpper.classList.add("image-warpper");
-        image_warpper.setAttribute("",title+", vue plein écran")
+        image_warpper.setAttribute("aria-label",title+", vue plein écran")
         description.classList.add("card_description");
         descrciption_btn.classList.add("btn-likes");
         descrciption_btn.classList.add("likes");
