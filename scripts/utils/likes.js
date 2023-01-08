@@ -10,23 +10,25 @@ function checkMyLikes(pictureArray){
             //transform text to int aka number 
             let picLikeCounter = parseInt(like.querySelector(".like-counter").innerHTML);
             const picId = parseInt(like.parentElement.id);
-   
+            
             pictureArray.forEach(pic => {
                 if (pic.id === picId) {
                     if (like.getAttribute("checked") === "true") {
                         like.setAttribute("checked", false);
                         like.querySelector(".like-logo").classList.remove("byebye-heart");
-
+                        
                         picLikeCounter -= 1;
-
+                        
                         pic.likes -= 1;
+                        like.setAttribute("aria-label",picLikeCounter+" likes");
                     } else {
                         like.setAttribute("checked", true);
                         like.querySelector(".like-logo").classList.add("byebye-heart");
-
+                        
                         picLikeCounter += 1;
                         
                         pic.likes += 1;
+                        like.setAttribute("aria-label",picLikeCounter+" likes");
                     }
 
                 }
