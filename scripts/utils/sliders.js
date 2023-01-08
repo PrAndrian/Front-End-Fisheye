@@ -98,11 +98,12 @@ function displaySlide(n) {
  * start the video when the user clicks on it.
  */
 function playVideo() {
-    const videos = document.querySelectorAll("image-warpper");
+    const video = document.querySelectorAll("image-warpper > video");
+    const warppers = document.querySelectorAll("image-warpper");
 
-    videos.forEach(video => {
-        video.addEventListener("click", () => {
-            video.children.play();
+    warppers.forEach(warp => {
+        warp.addEventListener("click", () => {
+            video.play();
         });
     });
 }
@@ -171,11 +172,11 @@ function closeCarousel() {
     carouselSection.setAttribute("aria-hidden", "true");
     body.classList.remove("no-scroll");
     displayMainDom();
-    pauseVideo();
 }
 
 closeBtn.addEventListener("click", () => {
     closeCarousel();
+    pauseVideo();
 });
 
 
