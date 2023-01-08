@@ -36,14 +36,14 @@ function createSlide(media){
 
         if (media.image) {
             const photoWrapper = `
-                <img src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.image}" alt="${media.likes} likes" />`;
+                <img src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.image}" alt="${media.title}" />`;
 
             mediaDiv = photoWrapper;
         }
 
         if (media.video) {
             const videoWrapper = `
-                <video preload="metadata" id="player" mute loop  playsinline controls data-poster="${media.title}" title="${media.likes} likes">
+                <video preload="metadata" id="player" mute loop  playsinline controls data-poster="${media.title}" alt="${media.title}">
                     <source src="/Front-End-Fisheye/assets/photographers/${media.photographerId}/${media.video}#t=0.1" type="video/mp4"/>
                 </video>`;
             mediaDiv = videoWrapper;
