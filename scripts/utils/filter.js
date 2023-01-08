@@ -58,6 +58,7 @@ options.forEach(option =>{
         })
         //add check
         option.classList.add("checked");
+        option.parentElement.setAttribute("aria-activedescendant",option.id)
         option.setAttribute("aria-selected", "true");
         dropdownBtn.setAttribute("aria-activedescendant", option.innerText);
     })
