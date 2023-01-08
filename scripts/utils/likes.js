@@ -16,25 +16,20 @@ function checkMyLikes(pictureArray){
                     if (like.getAttribute("checked") === "true") {
                         like.setAttribute("checked", false);
                         like.querySelector(".like-logo").classList.remove("byebye-heart");
-                        
                         picLikeCounter -= 1;
-                        
                         pic.likes -= 1;
-                        like.querySelector(".like-counter").setAttribute("aria-label",picLikeCounter+" likes");
                     } else {
                         like.setAttribute("checked", true);
                         like.querySelector(".like-logo").classList.add("byebye-heart");
-                        
                         picLikeCounter += 1;
-                        
                         pic.likes += 1;
-                        like.querySelector(".like-counter").setAttribute("aria-label",picLikeCounter+" likes");
                     }
 
                 }
             })
 
             like.querySelector(".like-counter").innerHTML = picLikeCounter;
+            like.querySelector(".like-counter").setAttribute("aria-label",picLikeCounter+" likes");
             getMyTotalLikes(pictureArray)
         });
     });
