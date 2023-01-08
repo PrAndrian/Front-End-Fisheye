@@ -20,7 +20,7 @@ function checkMyLikes(pictureArray){
                         picLikeCounter -= 1;
                         
                         pic.likes -= 1;
-                        like.setAttribute("aria-label",picLikeCounter+" likes");
+                        like.querySelector(".like-counter").setAttribute("aria-label",picLikeCounter+" likes");
                     } else {
                         like.setAttribute("checked", true);
                         like.querySelector(".like-logo").classList.add("byebye-heart");
@@ -28,7 +28,7 @@ function checkMyLikes(pictureArray){
                         picLikeCounter += 1;
                         
                         pic.likes += 1;
-                        like.setAttribute("aria-label",picLikeCounter+" likes");
+                        like.querySelector(".like-counter").setAttribute("aria-label",picLikeCounter+" likes");
                     }
 
                 }
