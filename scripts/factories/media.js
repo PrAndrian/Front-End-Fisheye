@@ -2,6 +2,7 @@
 function mediaFactory(data){
     const {id,photographerId,title,image,likes,video} = data;
 
+    // generates media card DOM element
     function getMediaCardDOM(index){
         const mediaCard = document.createElement('article');
         const image_warpper = document.createElement('a');

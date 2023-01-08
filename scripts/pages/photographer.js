@@ -68,7 +68,7 @@ async function init() {
     const {thePhotographer,hisMedia} = await getPhotographerData(data,photographer_id);
  
     displayDataProfil(thePhotographer,hisMedia);
-    // organizeByLikes(hisMedia);
+    organizeByLikes(hisMedia);
     displayDataMedia(hisMedia);
     createSlider(hisMedia);
 

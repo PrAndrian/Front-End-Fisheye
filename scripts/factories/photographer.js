@@ -5,6 +5,7 @@ function photographerFactory(data) {
     const picture = `assets/photographers/${portrait}`;
     const url = `/Front-End-Fisheye/photographer.html?id=${id}`;
     
+    // generates user card DOM element
     function getUserCardDOM() {
         const redirect = document.createElement( 'a' );
         redirect.setAttribute('href',url)
