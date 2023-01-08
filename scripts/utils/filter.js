@@ -48,13 +48,13 @@ options.forEach(option =>{
         dropdownBtn.innerHTML = option.innerHTML;
         dropdownBtn.setAttribute("aria-haspopup", true);
         dropdownBtn.setAttribute("aria-expanded", false);
-        dropdownBtn.setAttribute("aria-selected", false);
         dropdown.style.display = "none";
         dropdownBtn.style.display = "flex";
-
+        
         //remove previous check
         options.forEach(option => {
             option.classList.remove("checked");
+            option.setAttribute("aria-selected", false);
         })
         //add check
         option.classList.add("checked");
