@@ -43,6 +43,7 @@ async function displayDataProfil(photographer,media) {
     
     //----------------------------------------------------------------
     profile_picture.setAttribute('src',picture);
+    profile_picture.setAttribute('alt',name);
     
     //----------------------------------------------------------------
     nameProfile.textContent = name;
