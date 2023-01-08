@@ -61,6 +61,7 @@ options.forEach(option =>{
         option.parentElement.setAttribute("aria-activedescendant",option.id)
         option.setAttribute("aria-selected", "true");
         dropdownBtn.setAttribute("aria-activedescendant", option.innerText);
+        dropdownBtn.setAttribute("aria-labelledby", option.innerText);
     })
 })
 
