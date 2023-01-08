@@ -171,11 +171,11 @@ function closeCarousel() {
     carouselSection.setAttribute("aria-hidden", "true");
     body.classList.remove("no-scroll");
     displayMainDom();
+    pauseVideo();
 }
 
 closeBtn.addEventListener("click", () => {
     closeCarousel();
-    pauseVideo();
 });
 
 
