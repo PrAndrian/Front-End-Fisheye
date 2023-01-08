@@ -21,6 +21,7 @@ function mediaFactory(data){
         descrciption_btn.classList.add("btn-likes");
         descrciption_btn.classList.add("likes");
         like_counter.classList.add("like-counter");
+        like_counter.setAttribute("aria-label",likes+" likes");
         heart_icon.classList.add("fa-solid");
         heart_icon.classList.add("fa-heart");
         heart_icon.classList.add("like-logo");
