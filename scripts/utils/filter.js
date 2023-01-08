@@ -48,6 +48,7 @@ options.forEach(option =>{
         dropdownBtn.innerHTML = option.innerHTML;
         dropdownBtn.setAttribute("aria-haspopup", true);
         dropdownBtn.setAttribute("aria-expanded", false);
+        dropdownBtn.setAttribute("aria-selected", false);
         dropdown.style.display = "none";
         dropdownBtn.style.display = "flex";
 
@@ -57,6 +58,8 @@ options.forEach(option =>{
         })
         //add check
         option.classList.add("checked");
+        option.setAttribute("aria-selected", "true");
+        dropdownBtn.setAttribute("aria-activedescendant", option.innerText);
     })
 })
 

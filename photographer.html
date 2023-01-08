@@ -58,20 +58,20 @@
           <input class="dropdown-checkbox" type="checkbox" id="dropdown" id="filter_by">
           <label class="filter_by" id="filter_by" for="dropdown">Trier par</label>
           <div class="selector-warpper">
-            <button id="dropdown-menu" class="dropdown-menu__button">
+            <button id="dropdown-menu" class="dropdown-menu__button" aria-haspopup="true" aria-expanded="false">
               <span>Popularité</span>
               <i class="fa-solid fa-chevron-down icon-filter"></i>
             </button>
-            <ul role="listbox" class="selector" id="filter" tabindex="-1">
-              <li role="option" class="option" id="popularity">
+            <ul role="listbox" class="selector" id="filter" tabindex="-1" aria-controls="dropdown-menu" aria-labelledby="select__label" aria-activedescendant="Trie">
+              <li role="option" class="option" id="popularity" aria-label="Trier par popularité">
                 <span>Popularité</span>
                 <i class="fa-solid fa-chevron-down icon-filter"></i>
               </li>
-              <li role="option" class="option" id="date">
+              <li role="option" class="option" id="date" aria-label="Trier par date">
                 <span>Date</span>
                 <i class="fa-solid fa-chevron-down icon-filter"></i>
               </li>
-              <li role="option" class="option" id="title">
+              <li role="option" class="option" id="title" aria-label="Trier par titre">
                 <span>Titre</span>
                 <i class="fa-solid fa-chevron-down icon-filter"></i>
               </li>
