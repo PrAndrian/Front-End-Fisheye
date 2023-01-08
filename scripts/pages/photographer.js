@@ -30,7 +30,7 @@ async function getPhotographerData(data,photographer_id){
     return {thePhotographer,hisMedia}
 };
 
-async function displayDataProfil(photographer,media) {
+async function displayDataProfil(photographer) {
     const {name,portrait,city,country,tagline, price} = photographer;
 
     const picture = `/Front-End-Fisheye/assets/photographers/${portrait}`;
