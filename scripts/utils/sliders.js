@@ -98,11 +98,11 @@ function displaySlide(n) {
  * start the video when the user clicks on it.
  */
 function playVideo() {
-    const warppers = document.querySelectorAll("image-warpper");
+    const videos = document.querySelectorAll("video");
 
-    warppers.forEach(warp => {
-        warp.addEventListener("click", () => {
-            warp.children.play();
+    videos.forEach(video => {
+        video.addEventListener("click", () => {
+            video.play();
         });
     });
 }
